@@ -89,7 +89,7 @@ int main()
 				continue;
 			}
 			
-			// custom game
+			/*// custom game
 			else
 			{
 				window.clear(Color{ 41, 31, 92, 255 });
@@ -154,8 +154,7 @@ int main()
 				RocketSprite.setPosition(rocket.getX() - 15, rocket.getY() - 72);
 				window.draw(RocketSprite);
 			}
-
-			/*
+			*/
 			// always wwin
 			else
 			{
@@ -178,7 +177,7 @@ int main()
 
 				RocketSprite.setPosition(rocket.getX() - 15, rocket.getY() - 72);
 				window.draw(RocketSprite);
-			}*/
+			}
 
 			cout << "\n ROCKET LANDING GAME " << "\n Play with WASD buttons! \n";
 
