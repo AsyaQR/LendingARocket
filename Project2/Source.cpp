@@ -170,8 +170,22 @@ int main()
 				float l = landingFieldPosition - LANDING_FIELD_LENGHT - rocket.getX() ;
 				float t = GRAVITY_ACCELERATION / (2 * WINDOW_HEIGHT - 80 - 2 * rocket.getY());
 				rocket.setSidePower((l) * sqrt(t) - rocket.getVelocityX() + AIR_RESISTANCE);
-			
-
+				Texture FlameTexture;
+				FlameTexture.loadFromFile("C:\\Users\\79292\\Desktop\\Project2\\images\\flame.png");
+				FlameTexture.setSmooth(true);
+				Sprite FlameSprite(FlameTexture);
+				if ((l) * sqrt(t) - rocket.getVelocityX() + AIR_RESISTANCE > 0)
+				{
+					FlameSprite.setRotation(270);
+					FlameSprite.setPosition(rocket.getX() + 10, rocket.getY());
+					window.draw(FlameSprite);
+				}
+				if ((l) * sqrt(t) - rocket.getVelocityX() + AIR_RESISTANCE < 0)
+				{
+					FlameSprite.setRotation(90);
+					FlameSprite.setPosition(rocket.getX() - 10, rocket.getY() - 40);
+					window.draw(FlameSprite);
+				}
 				window.draw(ground);
 				window.draw(landingField);
 
